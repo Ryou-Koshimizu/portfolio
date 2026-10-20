@@ -15,15 +15,18 @@
 <div class="bg-fallback" aria-hidden="true"></div>
 <canvas id="gl" aria-hidden="true"></canvas>
 
-<header class="nav" data-glass data-z="2" data-frost=".6">
+<header class="site-head">
+<div class="nav" data-glass data-z="2" data-frost=".6">
   <a class="nav-brand" href="#top" aria-label="ページの先頭へ">RK</a>
   <nav class="nav-links" aria-label="ページ内">
     <span class="nav-lens" data-glass data-z="3" data-kind="lens" aria-hidden="true"></span>
     <a href="#works">実績</a>
+    <a href="#range">頼めること</a>
     <a href="#stack">技術</a>
     <a href="#process">進め方</a>
     <a href="#contact">連絡</a>
   </nav>
+</div>
 </header>
 
 <div id="scroller"><div id="track">
@@ -123,7 +126,83 @@
         </dl>
       </article>
     </div>
-    <p class="footnote" data-reveal>数値は各リポジトリの検証記録より。架空データでの実測で、実データでの精度を保証するものではありません。</p>
+    <p class="footnote" data-reveal>数値は各リポジトリの検証記録より（生成した架空データでの実測）。</p>
+  </section>
+
+  <section id="range" class="sec range">
+    <div class="sec-head">
+      <span class="gl-text giant" data-gl-text="giant" aria-hidden="true">Range</span>
+      <h2 data-reveal>頼めること</h2>
+      <p data-reveal>よくあるご相談と、それを実際に作って公開している実例です。どれも中身のコードまで読めます。</p>
+    </div>
+    <div class="panel cases-panel" data-glass data-reveal>
+      <ol class="cases">
+        <li class="case" data-reveal>
+          <a class="case-a" href="https://github.com/Ryou-Koshimizu/japanese-data-agent" target="_blank" rel="noopener">
+            <span class="case-n">01</span>
+            <span class="case-q">社内のデータを、日本語で聞いて分析したい</span>
+            <span class="case-how">SQL の自動生成・安全性の検証・グラフ</span>
+            <span class="case-proof"><span class="case-proof-l">実例</span>日本語データ分析エージェント<span class="case-arrow" aria-hidden="true">↗</span></span>
+          </a>
+        </li>
+        <li class="case" data-reveal>
+          <a class="case-a" href="https://github.com/Ryou-Koshimizu/japanese-knowledge-rag" target="_blank" rel="noopener">
+            <span class="case-n">02</span>
+            <span class="case-q">社内の規程やマニュアルに、AIが根拠つきで答えてほしい</span>
+            <span class="case-how">RAG・日本語のハイブリッド検索・部署ごとの権限</span>
+            <span class="case-proof"><span class="case-proof-l">実例</span>社内ナレッジ検索AI<span class="case-arrow" aria-hidden="true">↗</span></span>
+          </a>
+        </li>
+        <li class="case" data-reveal>
+          <a class="case-a" href="https://github.com/Ryou-Koshimizu/japan-business-mcp" target="_blank" rel="noopener">
+            <span class="case-n">03</span>
+            <span class="case-q">Claude や Cursor から、社内の道具を使えるようにしたい</span>
+            <span class="case-how">MCP サーバー・単一バイナリ配布</span>
+            <span class="case-proof"><span class="case-proof-l">実例</span>日本の業務 MCP サーバー<span class="case-arrow" aria-hidden="true">↗</span></span>
+          </a>
+        </li>
+        <li class="case" data-reveal>
+          <a class="case-a" href="https://github.com/Ryou-Koshimizu/line-ai-reception" target="_blank" rel="noopener">
+            <span class="case-n">04</span>
+            <span class="case-q">LINE の問い合わせと予約を、AIに任せたい</span>
+            <span class="case-how">LINE Messaging API・予約の二重取り防止・人への引き継ぎ</span>
+            <span class="case-proof"><span class="case-proof-l">実例</span>LINE AI 受付ボット<span class="case-arrow" aria-hidden="true">↗</span></span>
+          </a>
+        </li>
+        <li class="case" data-reveal>
+          <a class="case-a" href="https://github.com/Ryou-Koshimizu/japanese-invoice-workflow" target="_blank" rel="noopener">
+            <span class="case-n">05</span>
+            <span class="case-q">請求書などの書類をAIで読み取り、承認まで流したい</span>
+            <span class="case-how">AIの読み取り＋ルールの検証・承認フロー・監査ログ</span>
+            <span class="case-proof"><span class="case-proof-l">実例</span>請求書AIワークフロー<span class="case-arrow" aria-hidden="true">↗</span></span>
+          </a>
+        </li>
+        <li class="case" data-reveal>
+          <a class="case-a" href="https://github.com/Ryou-Koshimizu/japanese-procurement-workflow" target="_blank" rel="noopener">
+            <span class="case-n">06</span>
+            <span class="case-q">見積・発注・承認の業務システムを作りたい</span>
+            <span class="case-how">権限と金額をデータベースで守る設計</span>
+            <span class="case-proof"><span class="case-proof-l">実例</span>備品発注ワークフロー<span class="case-arrow" aria-hidden="true">↗</span></span>
+          </a>
+        </li>
+        <li class="case" data-reveal>
+          <a class="case-a" href="https://noren-ai.jp" target="_blank" rel="noopener">
+            <span class="case-n">07</span>
+            <span class="case-q">Webサービスを立ち上げて、課金と運用まで任せたい</span>
+            <span class="case-how">OAuth 連携・Stripe 課金・WordPress プラグイン・監視</span>
+            <span class="case-proof"><span class="case-proof-l">実例</span>暖簾AI<span class="case-arrow" aria-hidden="true">↗</span></span>
+          </a>
+        </li>
+        <li class="case" data-reveal>
+          <a class="case-a" href="#top">
+            <span class="case-n">08</span>
+            <span class="case-q">見た目で選ばれる、動きのあるサイトがほしい</span>
+            <span class="case-how">WebGL のガラス・バネの動き・なめらかなスクロール</span>
+            <span class="case-proof"><span class="case-proof-l">実例</span>このページ<span class="case-arrow" aria-hidden="true">↗</span></span>
+          </a>
+        </li>
+      </ol>
+    </div>
   </section>
 
   <section id="stack" class="sec stack">

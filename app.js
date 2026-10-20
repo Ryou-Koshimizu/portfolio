@@ -84,18 +84,19 @@
     revealIO.observe(el);
   });
 
+  function fmt(n, dec) { return dec ? n.toFixed(dec) : Math.round(n).toLocaleString('ja-JP'); }
   function countUp(el) {
     var to = el.getAttribute('data-to');
     var v = parseFloat(to);
     var dec = (to.split('.')[1] || '').length;
-    if (reduced || !v) { el.textContent = to; return; }
+    if (reduced || !v) { el.textContent = fmt(v, dec); return; }
     var t0 = performance.now() + 120;
     el.textContent = (0).toFixed(dec);
     (function step(now) {
       var p = Math.max(0, Math.min(1, (now - t0) / 1500));
       var e = p === 1 ? 1 : 1 - Math.pow(2, -10 * p);
-      el.textContent = (v * e).toFixed(dec);
-      if (p < 1) requestAnimationFrame(step); else el.textContent = to;
+      el.textContent = fmt(v * e, dec);
+      if (p < 1) requestAnimationFrame(step); else el.textContent = fmt(v, dec);
     })(performance.now());
   }
 

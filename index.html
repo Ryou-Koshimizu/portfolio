@@ -103,8 +103,8 @@
         <p class="desc">請求書のPDF・画像をAIが読み取り、インボイス制度の要件と計算をルールで検証。確認→承認→仕訳CSVまで、権限と監査ログつきで処理します。</p>
         <dl class="metrics">
           <div><dt>架空40枚の必須項目</dt><dd><span class="num" data-to="40">40</span><small>/40</small></dd></div>
-          <div><dt>誤りを仕込んだ6枚の見逃し</dt><dd><span class="num" data-to="0">0</span><small>件</small></dd></div>
-          <div><dt>1枚の中央値</dt><dd><span class="num" data-to="6.8">6.8</span><small>秒</small></dd></div>
+          <div><dt>誤りを仕込んだ6枚の見逃し</dt><dd><span class="num" data-to="0">0</span><small>/6</small></dd></div>
+          <div><dt>正しい34枚の誤検出</dt><dd><span class="num" data-to="0">0</span><small>/34</small></dd></div>
         </dl>
         <div class="links">
           <a href="https://github.com/Ryou-Koshimizu/japanese-invoice-workflow" target="_blank" rel="noopener">リポジトリ<span aria-hidden="true">↗</span></a>
@@ -112,21 +112,65 @@
         </div>
       </article>
 
-      <article class="card card-proc" data-glass data-reveal>
-        <div class="card-proc-main">
-          <div class="card-top"><span class="idx">04</span><span class="kind">業務フロー × DB設計</span></div>
-          <h3>備品発注ワークフロー</h3>
-          <p class="desc">店舗の依頼→ヒアリング→メーカーの相見積→見積書→合意→発注→納期のお知らせまで。原価をA社に見せない権限と金額の計算を、PostgreSQL の RLS とトリガーでデータベース側に持たせています。</p>
-          <div class="links"><a href="https://github.com/Ryou-Koshimizu/japanese-procurement-workflow" target="_blank" rel="noopener">リポジトリ<span aria-hidden="true">↗</span></a></div>
+      <article class="card card-rag" data-glass data-reveal>
+        <div class="card-top"><span class="idx">04</span><span class="kind">Python × RAG</span></div>
+        <h3>社内ナレッジ検索AI</h3>
+        <p class="desc">社内規程（PDF・Word・HTML・Markdown）の質問に、AIが条文を引用して答えます。日本語のハイブリッド検索、部署・役職ごとの権限、引用を条文と一字一句照合して捏造を止める仕組みつき。</p>
+        <dl class="metrics">
+          <div><dt>実AIの評価105問の正答</dt><dd><span class="num" data-to="105">105</span><small>/105</small></dd></div>
+          <div><dt>116件の引用のうちの誤り</dt><dd><span class="num" data-to="0">0</span><small>件</small></dd></div>
+          <div><dt>6,300件の照合での権限の漏れ</dt><dd><span class="num" data-to="0">0</span><small>件</small></dd></div>
+        </dl>
+        <div class="links">
+          <a href="https://github.com/Ryou-Koshimizu/japanese-knowledge-rag" target="_blank" rel="noopener">リポジトリ<span aria-hidden="true">↗</span></a>
         </div>
-        <dl class="metrics metrics-col">
+      </article>
+
+      <article class="card card-mcp" data-glass data-reveal>
+        <div class="card-top"><span class="idx">05</span><span class="kind">Go × MCP</span></div>
+        <h3>日本の業務 MCP サーバー</h3>
+        <p class="desc">Claude や Cursor から呼べる12の道具（祝日・営業日・支払期日・インボイス・消費税・源泉徴収・印紙・和暦・表記ゆれ）。祝日は法律の規則から計算し、単一の実行ファイルで配布。ブラウザで試せる遊び場つき。</p>
+        <dl class="metrics">
+          <div><dt>国税庁の公開データの番号の照合</dt><dd><span class="num" data-to="331285">331,285</span><small>件</small></dd></div>
+          <div><dt>そのうちの誤り</dt><dd><span class="num" data-to="0">0</span><small>件</small></dd></div>
+          <div><dt>内閣府の祝日と一致</dt><dd><span class="num" data-to="1067">1,067</span><small>日</small></dd></div>
+        </dl>
+        <div class="links">
+          <a href="https://github.com/Ryou-Koshimizu/japan-business-mcp" target="_blank" rel="noopener">リポジトリ<span aria-hidden="true">↗</span></a>
+          <a href="https://ryou-koshimizu.github.io/japan-business-mcp/" target="_blank" rel="noopener">遊び場<span aria-hidden="true">↗</span></a>
+        </div>
+      </article>
+
+      <article class="card card-proc" data-glass data-reveal>
+        <div class="card-top"><span class="idx">06</span><span class="kind">業務フロー × DB設計</span></div>
+        <h3>備品発注ワークフロー</h3>
+        <p class="desc">店舗の依頼→ヒアリング→メーカーの相見積→見積書→合意→発注→納期のお知らせまで。原価を依頼元に見せない権限と金額の計算を、PostgreSQL の RLS とトリガーでデータベース側に持たせています。</p>
+        <dl class="metrics">
           <div><dt>単体・DB・実PostgreSQLの試験</dt><dd><span class="num" data-to="127">127</span><small>件</small></dd></div>
           <div><dt>実ブラウザ2種の通し試験</dt><dd><span class="num" data-to="70">70</span><small>件</small></dd></div>
           <div><dt>axe の WCAG 違反</dt><dd><span class="num" data-to="0">0</span><small>件</small></dd></div>
         </dl>
+        <div class="links">
+          <a href="https://github.com/Ryou-Koshimizu/japanese-procurement-workflow" target="_blank" rel="noopener">リポジトリ<span aria-hidden="true">↗</span></a>
+          <a href="https://japanese-procurement-workflow.vercel.app" target="_blank" rel="noopener">公開デモ<span aria-hidden="true">↗</span></a>
+        </div>
+      </article>
+
+      <article class="card card-line" data-glass data-reveal>
+        <div class="card-top"><span class="idx">07</span><span class="kind">TypeScript × LINE × Edge</span></div>
+        <h3>LINE AI 受付・予約ボット</h3>
+        <p class="desc">LINE 公式アカウントの問い合わせに AI が店の情報だけで答え、空き枠の提示から仮予約・確定・変更、スタッフへの引き継ぎまで。Cloudflare Workers・D1・Durable Objects で二重予約を防ぎます。</p>
+        <dl class="metrics">
+          <div><dt>実AIの会話42項目の誤答</dt><dd><span class="num" data-to="0">0</span><small>件</small></dd></div>
+          <div><dt>同時30人での二重予約</dt><dd><span class="num" data-to="0">0</span><small>件</small></dd></div>
+          <div><dt>署名200通の誤判定</dt><dd><span class="num" data-to="0">0</span><small>件</small></dd></div>
+        </dl>
+        <div class="links">
+          <a href="https://github.com/Ryou-Koshimizu/line-ai-reception" target="_blank" rel="noopener">リポジトリ<span aria-hidden="true">↗</span></a>
+        </div>
       </article>
     </div>
-    <p class="footnote" data-reveal>数値は各リポジトリの検証記録より（生成した架空データでの実測）。</p>
+    <p class="footnote" data-reveal>数値は各リポジトリの検証記録より。MCP サーバーは国税庁・内閣府の公開データ、ほかは生成した架空データでの実測です。</p>
   </section>
 
   <section id="range" class="sec range">
@@ -211,11 +255,53 @@
       <h2 data-reveal>技術</h2>
       <p data-reveal>フロントエンド・バックエンド・AI・運用まで、一人で対応します。</p>
     </div>
+    <div class="panel lang-panel" data-glass data-reveal>
+      <h3 class="lang-h">公開リポジトリの言語（GitHub の集計・2026-10-21）</h3>
+      <ol class="langs">
+        <li class="lang" style="--w:1.000">
+          <span class="lang-name">TypeScript</span>
+          <span class="lang-bar" aria-hidden="true"><i></i></span>
+          <span class="lang-num"><b>1,388</b> KB ・ 4本</span>
+          <span class="lang-use">データ分析・請求書・備品発注・LINE</span>
+        </li>
+        <li class="lang" style="--w:0.313">
+          <span class="lang-name">HTML / CSS</span>
+          <span class="lang-bar" aria-hidden="true"><i></i></span>
+          <span class="lang-num"><b>435</b> KB ・ 6本</span>
+          <span class="lang-use">6本すべての画面</span>
+        </li>
+        <li class="lang" style="--w:0.166">
+          <span class="lang-name">Go</span>
+          <span class="lang-bar" aria-hidden="true"><i></i></span>
+          <span class="lang-num"><b>230</b> KB ・ 1本</span>
+          <span class="lang-use">MCP サーバー</span>
+        </li>
+        <li class="lang" style="--w:0.149">
+          <span class="lang-name">Python</span>
+          <span class="lang-bar" aria-hidden="true"><i></i></span>
+          <span class="lang-num"><b>207</b> KB ・ 2本</span>
+          <span class="lang-use">社内ナレッジ検索・LINE の測定</span>
+        </li>
+        <li class="lang" style="--w:0.083">
+          <span class="lang-name">SQL（PL/pgSQL）</span>
+          <span class="lang-bar" aria-hidden="true"><i></i></span>
+          <span class="lang-num"><b>115</b> KB ・ 2本</span>
+          <span class="lang-use">請求書・備品発注の権限と計算</span>
+        </li>
+        <li class="lang" style="--w:0.053">
+          <span class="lang-name">JavaScript</span>
+          <span class="lang-bar" aria-hidden="true"><i></i></span>
+          <span class="lang-num"><b>73</b> KB ・ 4本</span>
+          <span class="lang-use">MCP の遊び場・画面の動き</span>
+        </li>
+      </ol>
+      <p class="lang-note">このほか、本番運用中の暖簾AIで PHP（WordPress プラグイン）と Google Apps Script、このページで GLSL（WebGL のシェーダー）を使っています。</p>
+    </div>
     <div class="panel stack-panel" data-glass data-reveal>
-      <div class="stack-group"><h3>フロントエンド</h3><ul><li>TypeScript</li><li>React</li><li>Next.js</li><li>HTML / CSS</li></ul></div>
-      <div class="stack-group"><h3>バックエンド・DB</h3><ul><li>Node.js</li><li>PostgreSQL</li><li>RLS・トリガー</li><li>Stripe</li></ul></div>
-      <div class="stack-group"><h3>AI</h3><ul><li>Claude API</li><li>OpenAI API</li><li>SQL の生成と検証</li><li>書類の読み取り</li></ul></div>
-      <div class="stack-group"><h3>運用・品質</h3><ul><li>GitHub Actions</li><li>Vercel</li><li>Playwright・axe</li><li>CodeQL・Dependabot</li></ul></div>
+      <div class="stack-group"><h3>画面</h3><ul><li>React・Next.js</li><li>Hono・素の HTML/CSS</li><li>WebGL・WebAssembly</li><li>アクセシビリティ（axe）</li></ul></div>
+      <div class="stack-group"><h3>サーバー・DB</h3><ul><li>Node.js・FastAPI・Go</li><li>PostgreSQL の RLS・トリガー</li><li>SQLite（FTS5）・D1</li><li>Cloudflare Workers</li></ul></div>
+      <div class="stack-group"><h3>AI</h3><ul><li>Claude API・OpenAI API</li><li>RAG・ハイブリッド検索</li><li>MCP サーバー</li><li>ツール呼び出し・評価</li></ul></div>
+      <div class="stack-group"><h3>運用・品質</h3><ul><li>GitHub Actions・Vercel</li><li>Playwright・2種のブラウザ</li><li>CodeQL・Dependabot</li><li>Stripe・LINE・Google の連携</li></ul></div>
     </div>
   </section>
 

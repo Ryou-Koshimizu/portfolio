@@ -295,6 +295,18 @@ html.js .lang-panel.in .lang:nth-child(6) .lang-bar i { transition-delay: .4s; }
 }
 @media (prefers-reduced-motion: reduce) { html.js .lang-panel .lang-bar i { transform: none; transition: none; } }
 
+/* ── 品質の守り方 ── */
+.q-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(11em, 100%), 1fr)); gap: 18px; margin: 0 0 clamp(14px, 1.8vw, 22px); }
+.q-stats div { display: grid; gap: 4px; align-content: start; }
+.q-stats dt { order: 2; font-size: .8rem; color: var(--muted); overflow-wrap: anywhere; }
+.q-stats dd { order: 1; margin: 0; font-size: clamp(2rem, 3.4vw, 2.8rem); font-weight: 700; line-height: 1.05; letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+.q-stats small { margin-left: 3px; font-size: .42em; font-weight: 600; color: var(--muted); letter-spacing: 0; }
+.q-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(18em, 100%), 1fr)); gap: clamp(14px, 1.8vw, 22px); }
+.q-item { display: grid; gap: 10px; align-content: start; padding: 24px; border-radius: 24px; transition: transform 1s var(--spring); }
+.q-n { font-size: .8rem; font-weight: 700; color: var(--cyan); font-variant-numeric: tabular-nums; }
+.q-item h3 { font-size: 1.1rem; font-weight: 700; }
+.q-item p { font-size: .9rem; color: var(--body); overflow-wrap: anywhere; }
+
 /* ── 進め方 ── */
 .steps { position: relative; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(14px, 1.8vw, 22px); padding-top: 34px; }
 .steps-line { position: absolute; left: 0; right: 0; top: 0; height: 2px; border-radius: 2px; background: rgba(255, 255, 255, .1); overflow: hidden; }

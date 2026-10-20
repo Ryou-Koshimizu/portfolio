@@ -24,6 +24,7 @@
     <a href="#range">頼めること</a>
     <a href="#stack">技術</a>
     <a href="#process">進め方</a>
+    <a href="#quality">品質</a>
     <a href="#contact">連絡</a>
   </nav>
 </div>
@@ -319,6 +320,28 @@
       <div class="step" data-glass data-reveal><span class="step-n">02</span><h3>動く画面で確かめる</h3><p>早めに触れる形にして、使いながら直します。</p></div>
       <div class="step" data-glass data-reveal><span class="step-n">03</span><h3>テストと実測で示す</h3><p>どこまでできているかを数字で示し、未測定の点もそのまま伝えます。</p></div>
       <div class="step" data-glass data-reveal><span class="step-n">04</span><h3>運用まで続ける</h3><p>本番に出したあとの監視・不具合の対応・改善まで担当します。</p></div>
+    </div>
+  </section>
+
+  <section id="quality" class="sec quality">
+    <div class="sec-head">
+      <span class="gl-text giant" data-gl-text="giant" aria-hidden="true">Quality</span>
+      <h2 data-reveal>品質の守り方</h2>
+      <p data-reveal>本番と同じ条件で、実際に動かして確かめてから出します。試験の設計と実行は AI エージェントと分担し、合否の基準は先に決めて固定しています。</p>
+    </div>
+    <dl class="q-stats panel" data-glass data-reveal>
+      <div><dt>自動テスト（公開6本の合計）</dt><dd><span class="num" data-to="1210">1,210</span><small>件</small></dd></div>
+      <div><dt>毎回確かめる画面の大きさ</dt><dd><span class="num" data-to="25">25</span><small>種類</small></dd></div>
+      <div><dt>実機で通すブラウザエンジン</dt><dd><span class="num" data-to="2">2</span><small>種類</small></dd></div>
+      <div><dt>開いているセキュリティ指摘</dt><dd><span class="num" data-to="0">0</span><small>件</small></dd></div>
+    </dl>
+    <div class="q-grid">
+      <div class="q-item" data-glass data-reveal><span class="q-n">01</span><h3>実機での通し試験</h3><p>本番と同じビルドを、実際のブラウザ（Chromium・WebKit）で起動し、ログインから承認・出力・予約の確定まで、利用者と同じ操作を自動で最後まで通します。データベースは実PostgreSQL、Workers は本番と同じ実行環境、AI は実際のモデルで流します。</p></div>
+      <div class="q-item" data-glass data-reveal><span class="q-n">02</span><h3>AIの精度は評価セットで採点</h3><p>正解つきの固定の問題集（50〜105問）で採点し、モデル・コミット・条件を記録に残します。合否の基準は先に決めて固定し、結果に合わせてゆるめません。誤答・誤検出・見逃しを分けて数えます。</p></div>
+      <div class="q-item" data-glass data-reveal><span class="q-n">03</span><h3>公開データとの突き合わせ</h3><p>MCP サーバーは、国税庁の公開データ 331,285 件と内閣府の祝日 1,067 日に1件ずつ突き合わせ、誤り0を確かめました。架空のデータだけで済ませない検証です。</p></div>
+      <div class="q-item" data-glass data-reveal><span class="q-n">04</span><h3>失敗を再現してから直す</h3><p>不具合は、まず失敗する試験を書いて再現を確かめ、直したあとに緑になることを見ます。ランダムな入力を当てるファズで見つかった入力は、回帰試験の種として残します。</p></div>
+      <div class="q-item" data-glass data-reveal><span class="q-n">05</span><h3>AIのレビューと静的解析を毎回</h3><p>コミットごとに AI のセキュリティレビューが走り、push 後は GitHub の CodeQL と依存関係の審査が走ります。指摘（許可リストのすり抜け・上限のすり抜け・DoS など）は回帰試験つきで直し、開いている指摘は全リポジトリで0件です。</p></div>
+      <div class="q-item" data-glass data-reveal><span class="q-n">06</span><h3>本番と同じ Linux の CI で確認</h3><p>手元（macOS）で緑でも、Ubuntu の CI で2種のブラウザ・25種類の画面幅・axe を毎回流します。Linux だけで出た不具合（読み込み前の操作でページが読み直される等）も、判定をゆるめずに原因から直しました。</p></div>
     </div>
   </section>
 

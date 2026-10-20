@@ -291,7 +291,7 @@
       'precision highp float;',
       'uniform vec2 uRes;uniform float uT;uniform float uDpr;',
       'uniform vec4 uOrb[6];uniform vec3 uOrbC[6];',
-      'uniform sampler2D uTxt;uniform vec4 uTR[6];uniform vec4 uTU[6];uniform vec4 uTA[6];uniform float uTn;',
+      'uniform sampler2D uTxt;uniform vec4 uTR[8];uniform vec4 uTU[8];uniform vec4 uTA[8];uniform float uTn;',
       NOISE,
       'vec3 sky(vec2 fc){',
       ' vec2 uv=fc/uRes;float asp=uRes.x/uRes.y;vec2 p=vec2(uv.x*asp,uv.y);float t=uT;',
@@ -312,7 +312,7 @@
       ' return a*m*A.x;}',
       'void main(){',
       ' vec2 fc=gl_FragCoord.xy;vec3 c=sky(fc);float py;',
-      ' for(int i=0;i<6;i++){if(float(i)>=uTn)break;if(uTA[i].z>.5){float a=txt(uTR[i],uTU[i],uTA[i],fc,py);c+=vec3(.78,.84,1.)*a;}}',
+      ' for(int i=0;i<8;i++){if(float(i)>=uTn)break;if(uTA[i].z>.5){float a=txt(uTR[i],uTU[i],uTA[i],fc,py);c+=vec3(.78,.84,1.)*a;}}',
       ' for(int i=0;i<6;i++){',
       '  vec4 O=uOrb[i];if(O.z<1.)continue;vec3 col=uOrbC[i];',
       '  vec2 d=(fc-O.xy)/O.z;float r2=dot(d,d);float l=sqrt(r2);',
@@ -325,7 +325,7 @@
       '   vec3 s=mix(col*.10,col*1.05,dif)+sp*.95+fr*mix(col,iri,.55)*.75+col*.18*max(-n.y,0.);',
       '   c=mix(c,s,1.-smoothstep(1.-2.2/O.z,1.,l));}',
       ' }',
-      ' for(int i=0;i<6;i++){if(float(i)>=uTn)break;if(uTA[i].z<.5){float a=txt(uTR[i],uTU[i],uTA[i],fc,py);',
+      ' for(int i=0;i<8;i++){if(float(i)>=uTn)break;if(uTA[i].z<.5){float a=txt(uTR[i],uTU[i],uTA[i],fc,py);',
       '  vec3 tc=mix(vec3(.80,.85,1.),vec3(1.),smoothstep(.15,.85,py));c=mix(c,tc,a);}}',
       ' gl_FragColor=vec4(c,1.);}'
     ].join('\n');
@@ -498,7 +498,7 @@
     }
 
     /* ---- キャンバスに描く文字（名前と大きな見出し） ---- */
-    var textEls = Array.prototype.slice.call(document.querySelectorAll('[data-gl-text]')).slice(0, 6);
+    var textEls = Array.prototype.slice.call(document.querySelectorAll('[data-gl-text]')).slice(0, 8);
     var textItems = [];
     var atlasScale = 1;
     function buildAtlas() {
@@ -579,7 +579,7 @@
 
     var aS = new Float32Array(64), aP = new Float32Array(64), aQ = new Float32Array(64), aC = new Float32Array(48);
     var aOrb = new Float32Array(24), aOrbC = new Float32Array(18);
-    var aTR = new Float32Array(24), aTU = new Float32Array(24), aTA = new Float32Array(24);
+    var aTR = new Float32Array(32), aTU = new Float32Array(32), aTA = new Float32Array(32);
     var born = performance.now();
     var dirty = true;
 

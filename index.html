@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="ja" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Ryou Koshimizu — Portfolio</title>
+<meta name="description" content="Ryou Koshimizu のポートフォリオ。業務にAIを組み込むシステムを、要件の整理から本番の運用まで。">
+<meta name="theme-color" content="#03040a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="bg-fallback" aria-hidden="true"></div>
+<canvas id="gl" aria-hidden="true"></canvas>
+
+<header class="nav" data-glass data-z="2" data-frost=".6">
+  <a class="nav-brand" href="#top" aria-label="ページの先頭へ">RK</a>
+  <nav class="nav-links" aria-label="ページ内">
+    <span class="nav-lens" data-glass data-z="3" data-kind="lens" aria-hidden="true"></span>
+    <a href="#works">実績</a>
+    <a href="#stack">技術</a>
+    <a href="#process">進め方</a>
+    <a href="#contact">連絡</a>
+  </nav>
+</header>
+
+<div id="scroller"><div id="track">
+<main>
+
+  <section id="top" class="hero">
+    <p class="chip" data-glass data-frost=".45" data-reveal><span class="chip-dot" aria-hidden="true"></span>フリーランスエンジニア ・ AI × 業務システム</p>
+    <h1 class="name">
+      <span class="gl-text" data-gl-text="hero">Ryou</span>
+      <span class="gl-text" data-gl-text="hero">Koshimizu</span>
+    </h1>
+    <p class="lead">
+      <span class="line"><span>業務にAIを組み込む。</span></span>
+      <span class="line"><span>要件の整理から本番の運用まで、ひとりで。</span></span>
+    </p>
+    <div class="cta">
+      <a class="btn btn-primary" data-glass data-frost=".25" data-tint=".2" data-tint-color=".45,.6,1" data-magnetic href="#works">実績を見る</a>
+      <a class="btn" data-glass data-frost=".35" data-magnetic href="https://github.com/Ryou-Koshimizu" target="_blank" rel="noopener">GitHub<span class="arrow" aria-hidden="true">↗</span></a>
+    </div>
+    <div class="scroll-hint" aria-hidden="true"><span></span></div>
+  </section>
+
+  <div class="marquee" data-glass data-frost=".55" data-reveal aria-label="使っている技術">
+    <div class="marquee-track">
+      <span>TypeScript</span><span>Next.js</span><span>React</span><span>Node.js</span><span>PostgreSQL</span><span>Row Level Security</span><span>Claude API</span><span>OpenAI API</span><span>Stripe</span><span>WordPress</span><span>GitHub Actions</span><span>Vercel</span><span>Playwright</span><span>Docker</span>
+      <span aria-hidden="true">TypeScript</span><span aria-hidden="true">Next.js</span><span aria-hidden="true">React</span><span aria-hidden="true">Node.js</span><span aria-hidden="true">PostgreSQL</span><span aria-hidden="true">Row Level Security</span><span aria-hidden="true">Claude API</span><span aria-hidden="true">OpenAI API</span><span aria-hidden="true">Stripe</span><span aria-hidden="true">WordPress</span><span aria-hidden="true">GitHub Actions</span><span aria-hidden="true">Vercel</span><span aria-hidden="true">Playwright</span><span aria-hidden="true">Docker</span>
+    </div>
+  </div>
+
+  <section id="works" class="sec works">
+    <div class="sec-head">
+      <span class="gl-text giant" data-gl-text="giant" aria-hidden="true">Works</span>
+      <h2 data-reveal>実績</h2>
+      <p data-reveal>個人で本番運用しているサービスと、公開している実務向けのリポジトリです。</p>
+    </div>
+
+    <div class="bento">
+      <article class="card card-noren" data-glass data-reveal>
+        <div class="card-top"><span class="idx">01</span><span class="badge"><span class="badge-dot" aria-hidden="true"></span>本番運用中</span></div>
+        <h3>暖簾AI</h3>
+        <p class="desc">中小事業者のホームページ集客を、AIで診断して改善するWebサービス。企画・開発・料金設計・本番運用までを個人で担当しています。</p>
+        <ol class="flow" aria-label="サービスの流れ">
+          <li><span class="flow-n">1</span>サイトを診断</li>
+          <li><span class="flow-n">2</span>直す所をカードに</li>
+          <li><span class="flow-n">3</span>サイトへ反映</li>
+        </ol>
+        <ul class="feat">
+          <li>Google Search Console・GA4 との OAuth 連携</li>
+          <li>Stripe のサブスクリプション課金</li>
+          <li>WordPress プラグインと GitHub 連携で、顧客のサイトへ反映</li>
+          <li>独自ドメインの自動設定と死活監視</li>
+        </ul>
+        <div class="links"><a href="https://noren-ai.jp" target="_blank" rel="noopener">サイトを見る<span aria-hidden="true">↗</span></a></div>
+      </article>
+
+      <article class="card card-data" data-glass data-reveal>
+        <div class="card-top"><span class="idx">02</span><span class="kind">AI × データ分析</span></div>
+        <h3>日本語データ分析エージェント</h3>
+        <p class="desc">日本語の質問からAIがSQLを計画・生成し、構文木で安全性を検証してから読み取り専用で実行。グラフと根拠つきで答えます。</p>
+        <dl class="metrics">
+          <div><dt>固定50問の正答</dt><dd><span class="num" data-to="50">50</span><small>/50</small></dd></div>
+          <div><dt>攻撃的な入力での実行</dt><dd><span class="num" data-to="0">0</span><small>件</small></dd></div>
+          <div><dt>会話評価</dt><dd><span class="num" data-to="14">14</span><small>/14</small></dd></div>
+        </dl>
+        <div class="links">
+          <a href="https://github.com/Ryou-Koshimizu/japanese-data-agent" target="_blank" rel="noopener">リポジトリ<span aria-hidden="true">↗</span></a>
+          <a href="https://japanese-data-agent.vercel.app" target="_blank" rel="noopener">公開デモ<span aria-hidden="true">↗</span></a>
+        </div>
+      </article>
+
+      <article class="card card-inv" data-glass data-reveal>
+        <div class="card-top"><span class="idx">03</span><span class="kind">AI × 経理</span></div>
+        <h3>請求書AIワークフロー</h3>
+        <p class="desc">請求書のPDF・画像をAIが読み取り、インボイス制度の要件と計算をルールで検証。確認→承認→仕訳CSVまで、権限と監査ログつきで処理します。</p>
+        <dl class="metrics">
+          <div><dt>架空40枚の必須項目</dt><dd><span class="num" data-to="40">40</span><small>/40</small></dd></div>
+          <div><dt>誤りの検出</dt><dd><span class="num" data-to="6">6</span><small>/6</small></dd></div>
+          <div><dt>1枚の中央値</dt><dd><span class="num" data-to="6.8">6.8</span><small>秒</small></dd></div>
+        </dl>
+        <div class="links">
+          <a href="https://github.com/Ryou-Koshimizu/japanese-invoice-workflow" target="_blank" rel="noopener">リポジトリ<span aria-hidden="true">↗</span></a>
+          <a href="https://japanese-invoice-workflow.vercel.app" target="_blank" rel="noopener">公開デモ<span aria-hidden="true">↗</span></a>
+        </div>
+      </article>
+
+      <article class="card card-proc" data-glass data-reveal>
+        <div class="card-proc-main">
+          <div class="card-top"><span class="idx">04</span><span class="kind">業務フロー × DB設計</span></div>
+          <h3>備品発注ワークフロー</h3>
+          <p class="desc">店舗の依頼→ヒアリング→メーカーの相見積→見積書→合意→発注→納期のお知らせまで。原価をA社に見せない権限と金額の計算を、PostgreSQL の RLS とトリガーでデータベース側に持たせています。</p>
+          <div class="links"><a href="https://github.com/Ryou-Koshimizu/japanese-procurement-workflow" target="_blank" rel="noopener">リポジトリ<span aria-hidden="true">↗</span></a></div>
+        </div>
+        <dl class="metrics metrics-col">
+          <div><dt>単体・DBテスト</dt><dd><span class="num" data-to="105">105</span><small>件</small></dd></div>
+          <div><dt>ブラウザのE2Eテスト</dt><dd><span class="num" data-to="10">10</span><small>件</small></dd></div>
+          <div><dt>axe の WCAG 違反</dt><dd><span class="num" data-to="0">0</span><small>件</small></dd></div>
+        </dl>
+      </article>
+    </div>
+    <p class="footnote" data-reveal>数値は各リポジトリの検証記録より。架空データでの実測で、実データでの精度を保証するものではありません。</p>
+  </section>
+
+  <section id="stack" class="sec stack">
+    <div class="sec-head">
+      <span class="gl-text giant" data-gl-text="giant" aria-hidden="true">Stack</span>
+      <h2 data-reveal>技術</h2>
+      <p data-reveal>画面からデータベース、AI、運用までを一続きで扱います。</p>
+    </div>
+    <div class="panel stack-panel" data-glass data-reveal>
+      <div class="stack-group"><h3>フロントエンド</h3><ul><li>TypeScript</li><li>React</li><li>Next.js</li><li>HTML / CSS</li></ul></div>
+      <div class="stack-group"><h3>バックエンド・DB</h3><ul><li>Node.js</li><li>PostgreSQL</li><li>RLS・トリガー</li><li>Stripe</li></ul></div>
+      <div class="stack-group"><h3>AI</h3><ul><li>Claude API</li><li>OpenAI API</li><li>SQL の生成と検証</li><li>書類の読み取り</li></ul></div>
+      <div class="stack-group"><h3>運用・品質</h3><ul><li>GitHub Actions</li><li>Vercel</li><li>Playwright・axe</li><li>CodeQL・Dependabot</li></ul></div>
+    </div>
+  </section>
+
+  <section id="process" class="sec process">
+    <div class="sec-head">
+      <span class="gl-text giant" data-gl-text="giant" aria-hidden="true">Process</span>
+      <h2 data-reveal>進め方</h2>
+      <p data-reveal>作る前に決め、作ったら数字で示し、出したあとも面倒を見ます。</p>
+    </div>
+    <div class="steps">
+      <div class="steps-line" aria-hidden="true"><i></i></div>
+      <div class="step" data-glass data-reveal><span class="step-n">01</span><h3>要件を文書にする</h3><p>何を作り、何を作らないかを最初に書き出して合意します。</p></div>
+      <div class="step" data-glass data-reveal><span class="step-n">02</span><h3>動く画面で確かめる</h3><p>早めに触れる形にして、使いながら直します。</p></div>
+      <div class="step" data-glass data-reveal><span class="step-n">03</span><h3>テストと実測で示す</h3><p>どこまでできているかを数字で示し、未測定の点もそのまま伝えます。</p></div>
+      <div class="step" data-glass data-reveal><span class="step-n">04</span><h3>運用まで続ける</h3><p>本番に出したあとの監視・不具合の対応・改善まで担当します。</p></div>
+    </div>
+  </section>
+
+  <section id="contact" class="sec contact">
+    <div class="panel contact-panel" data-glass data-reveal>
+      <p class="contact-eye">Contact</p>
+      <h2>業務を、もう一段軽く。</h2>
+      <p>お仕事のご相談は、このページをご覧になったサービスのメッセージ機能からお送りください。コードは GitHub で公開しています。</p>
+      <a class="btn btn-primary" data-glass data-z="1" data-frost=".25" data-tint=".2" data-tint-color=".45,.6,1" data-magnetic href="https://github.com/Ryou-Koshimizu" target="_blank" rel="noopener">GitHub を見る<span class="arrow" aria-hidden="true">↗</span></a>
+    </div>
+  </section>
+
+</main>
+<footer class="foot"><span>© 2026 Ryou Koshimizu</span></footer>
+</div></div>
+
+<script src="app.js"></script>
+</body>
+</html>
